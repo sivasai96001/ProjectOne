@@ -19,7 +19,7 @@ test('date picker', async ({ page }) => {
 
 })
 
-test.only('custom date', async ({ page }) => {
+test.only('custom date', async ({ context,page }) => {
   // await page.goto('https://demoqa.com/date-picker')
   // await page.click('id=datePickerMonthYearInput')
   // //await page.locator('//select[@class="react-datepicker__month-select"]').click()
@@ -34,4 +34,6 @@ test.only('custom date', async ({ page }) => {
   await obj.selectMonth('January')
   await obj.selectYear('1997')
   await obj.selectDay()
+
+  
 })
