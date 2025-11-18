@@ -20,7 +20,7 @@ test("test1", async({page})=>{
     await expect(page).toHaveURL(/dashboard/)
 });
 
-test.only("test 2", async({page})=>{
+test("test 2", async({page})=>{
     await page.goto('https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F')
     const mail = await page.locator('id=Email')
   await expect(mail).toHaveValue('admin@yourstore.com')
