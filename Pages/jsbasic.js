@@ -4,4 +4,4 @@ let rev = ""
  for(let i of con){
     rev=i+rev;
  }
- console.log(rev)
+ console.log(rev);
