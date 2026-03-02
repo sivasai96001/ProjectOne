@@ -6,4 +6,4 @@ let rev = 0
  }
  console.log(rev);
 
- console.log('After changes')
+ console.log('After changes are added')
