@@ -1,9 +1,10 @@
-let a = 78945
-let con = a.toString()
-let rev = 0
- for(let i of con){
-    rev += Number(i) 
- }
- console.log(rev);
-
- console.log('After changes')
+let str ='banana';
+let op={};
+for(let i of str){
+   if(op[i]){
+      op[i]=op[i]+1;
+   }else{
+      op[i]=1;
+   }
+}
+console.log(op)
