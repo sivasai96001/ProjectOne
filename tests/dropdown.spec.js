@@ -5,7 +5,6 @@ import { DropDown } from '../Pages/dropdown'
 
 test('drop down selection', async ({ page }) => {
   await page.goto('https://practice.expandtesting.com/')
-  
   await page.getByText('Demos').click()
   //  await page.selectOption('select', { value: 'IND' })
   await page.locator('a:has-text("Examples")').click()
