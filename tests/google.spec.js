@@ -6,7 +6,7 @@ test('check title', async ({ page }) => {
 
     await page.getByRole('link', { name: /EN/ }).click();
 
-    await page.getByText('తెలుగు -').click();
+   await page.getByText('తెలుగు - TE - అనువాదం', { exact: true }).click();
 
     await page.getByRole('link', { name: 'రద్దు చేయి' }).click();
 
