@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm ci'
+            }
+        }
+
+        stage('Install Playwright Browser') {
+            steps {
+                bat 'npx playwright install chromium'
+            }
+        }
+
+        stage('Run Google Test') {
+            steps {
+                bat 'npx playwright test tests/google.spec.js --project=chromium'
+            }
+        }
+
+    }
+
+    post {
+        always {
+            publishHTML([
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'Playwright HTML Report'
+            ])
+        }
+    }
+}
