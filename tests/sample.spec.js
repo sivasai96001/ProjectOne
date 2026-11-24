@@ -1,5 +1,7 @@
-import{test,expert} from '@playwright/test'
+import { test } from '@playwright/test';
+import { SamplePom } from '../Pages/samplepom';
 
-test('google',async({page})=>{
-await page.goto('https://chatgpt.com/')
-})
+test('Search Flipkart for iPhone 17 Pro and print its price', async ({ page }) => {
+  const samplePom = new SamplePom(page);
+  await samplePom.completeMobileSearch('iPhone 17 Pro');
+});
